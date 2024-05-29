@@ -1,0 +1,737 @@
+{
+  "address": "4rpZYqGe4Fx9bRD6bEWJdNdWxNQ6JVf9kABRLdnE1M2e",
+  "metadata": {
+    "name": "getter_setter",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_admin_accounts",
+      "discriminator": [
+        203,
+        88,
+        139,
+        90,
+        215,
+        47,
+        91,
+        1
+      ],
+      "accounts": [
+        {
+          "name": "maintainers",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  105,
+                  110,
+                  116,
+                  97,
+                  105,
+                  110,
+                  101,
+                  114,
+                  115
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "addresses",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_whitelist",
+      "discriminator": [
+        215,
+        46,
+        143,
+        176,
+        108,
+        113,
+        24,
+        1
+      ],
+      "accounts": [
+        {
+          "name": "maintainers",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  105,
+                  110,
+                  116,
+                  97,
+                  105,
+                  110,
+                  101,
+                  114,
+                  115
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "whitelists",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  104,
+                  105,
+                  116,
+                  101,
+                  108,
+                  105,
+                  115,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "caller_program"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caller_program"
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "get_value",
+      "discriminator": [
+        88,
+        79,
+        40,
+        100,
+        21,
+        74,
+        119,
+        125
+      ],
+      "accounts": [
+        {
+          "name": "storage",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  111,
+                  114,
+                  97,
+                  103,
+                  101
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [],
+      "returns": "u64"
+    },
+    {
+      "name": "init",
+      "discriminator": [
+        220,
+        59,
+        207,
+        236,
+        108,
+        250,
+        47,
+        100
+      ],
+      "accounts": [
+        {
+          "name": "maintainers",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  105,
+                  110,
+                  116,
+                  97,
+                  105,
+                  110,
+                  101,
+                  114,
+                  115
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "storage",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  111,
+                  114,
+                  97,
+                  103,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "value",
+          "type": "u64"
+        },
+        {
+          "name": "caller_program",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "remove_admin_accounts",
+      "discriminator": [
+        193,
+        27,
+        150,
+        163,
+        51,
+        177,
+        120,
+        162
+      ],
+      "accounts": [
+        {
+          "name": "maintainers",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  105,
+                  110,
+                  116,
+                  97,
+                  105,
+                  110,
+                  101,
+                  114,
+                  115
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "addresses",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_whitelist",
+      "discriminator": [
+        148,
+        244,
+        73,
+        234,
+        131,
+        55,
+        247,
+        90
+      ],
+      "accounts": [
+        {
+          "name": "maintainers",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  109,
+                  97,
+                  105,
+                  110,
+                  116,
+                  97,
+                  105,
+                  110,
+                  101,
+                  114,
+                  115
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "whitelists",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  104,
+                  105,
+                  116,
+                  101,
+                  108,
+                  105,
+                  115,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "caller_program"
+              }
+            ]
+          }
+        },
+        {
+          "name": "caller_program"
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set_value",
+      "discriminator": [
+        253,
+        214,
+        48,
+        201,
+        100,
+        201,
+        227,
+        219
+      ],
+      "accounts": [
+        {
+          "name": "whitelist",
+          "signer": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  119,
+                  104,
+                  105,
+                  116,
+                  101,
+                  108,
+                  105,
+                  115,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "caller_program"
+              }
+            ]
+          }
+        },
+        {
+          "name": "storage",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  111,
+                  114,
+                  97,
+                  103,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "caller_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "value",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Maintainers",
+      "discriminator": [
+        201,
+        217,
+        234,
+        104,
+        25,
+        149,
+        168,
+        56
+      ]
+    },
+    {
+      "name": "Storage",
+      "discriminator": [
+        209,
+        117,
+        255,
+        185,
+        196,
+        175,
+        68,
+        9
+      ]
+    },
+    {
+      "name": "WhitelistedPrograms",
+      "discriminator": [
+        38,
+        125,
+        4,
+        166,
+        115,
+        158,
+        198,
+        28
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "GetEvent",
+      "discriminator": [
+        176,
+        23,
+        158,
+        131,
+        96,
+        61,
+        24,
+        178
+      ]
+    },
+    {
+      "name": "InitEvent",
+      "discriminator": [
+        224,
+        129,
+        78,
+        87,
+        58,
+        43,
+        94,
+        127
+      ]
+    },
+    {
+      "name": "SetEvent",
+      "discriminator": [
+        235,
+        11,
+        12,
+        175,
+        145,
+        107,
+        97,
+        205
+      ]
+    },
+    {
+      "name": "UpdateAdminsEvent",
+      "discriminator": [
+        193,
+        223,
+        75,
+        33,
+        14,
+        18,
+        207,
+        71
+      ]
+    },
+    {
+      "name": "WhitelistEvent",
+      "discriminator": [
+        69,
+        134,
+        177,
+        228,
+        216,
+        46,
+        239,
+        8
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "Unauthorized",
+      "msg": "Error: Unauthorized User!"
+    }
+  ],
+  "types": [
+    {
+      "name": "GetEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "value",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InitEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "value",
+            "type": "u64"
+          },
+          {
+            "name": "whitelisted_program",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Maintainers",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admins",
+            "docs": [
+              "Admins"
+            ],
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "old_value",
+            "type": "u64"
+          },
+          {
+            "name": "new_value",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Storage",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "value",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateAdminsEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "update_type",
+            "type": {
+              "defined": {
+                "name": "UpdateType"
+              }
+            }
+          },
+          {
+            "name": "addresses",
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateType",
+      "docs": [
+        "Update Type"
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Add"
+          },
+          {
+            "name": "Remove"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WhitelistEvent",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "update_type",
+            "type": {
+              "defined": {
+                "name": "UpdateType"
+              }
+            }
+          },
+          {
+            "name": "programs",
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "WhitelistedPrograms",
+      "type": {
+        "kind": "struct",
+        "fields": []
+      }
+    }
+  ],
+  "constants": [
+    {
+      "name": "MAINTAINERS_TAG",
+      "type": "bytes",
+      "value": "[109, 97, 105, 110, 116, 97, 105, 110, 101, 114, 115]"
+    },
+    {
+      "name": "STORAGE_TAG",
+      "type": "bytes",
+      "value": "[115, 116, 111, 114, 97, 103, 101]"
+    },
+    {
+      "name": "WHITELIST_TAG",
+      "type": "bytes",
+      "value": "[119, 104, 105, 116, 101, 108, 105, 115, 116]"
+    }
+  ]
+}

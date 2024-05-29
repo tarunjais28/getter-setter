@@ -1,0 +1,55 @@
+{
+  "address": "F5ouJZN14kipjXz2LVbLMVthmMVXLP7U8fnb3CL7Cu7v",
+  "metadata": {
+    "name": "caller",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "set_value",
+      "discriminator": [
+        253,
+        214,
+        48,
+        201,
+        100,
+        201,
+        227,
+        219
+      ],
+      "accounts": [
+        {
+          "name": "whitelist",
+          "writable": true
+        },
+        {
+          "name": "storage",
+          "writable": true
+        },
+        {
+          "name": "getter_setter_program",
+          "writable": true
+        },
+        {
+          "name": "caller_program",
+          "address": "F5ouJZN14kipjXz2LVbLMVthmMVXLP7U8fnb3CL7Cu7v"
+        }
+      ],
+      "args": [
+        {
+          "name": "value",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "constants": [
+    {
+      "name": "WHITELIST_TAG",
+      "type": "bytes",
+      "value": "[119, 104, 105, 116, 101, 108, 105, 115, 116]"
+    }
+  ]
+}
